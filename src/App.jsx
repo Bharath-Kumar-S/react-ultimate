@@ -8,9 +8,10 @@ import {
 import "./App.css";
 import { Todo } from "./Pages/Todo";
 import { Counter } from "./Pages/Counter";
+import { ContactForm } from "./Pages/ContactForm";
 
 const Welcome = () => {
-  return <>Welcome to react Ultimate!!!</>;
+  return <h1>Welcome to react Ultimate!!!</h1>;
 };
 
 const App = () => {
@@ -22,20 +23,16 @@ const App = () => {
         <Route element={<Welcome />} path="/" />
         <Route element={<Todo />} path="/todo" />
         <Route element={<Counter />} path="/counter" />
+        <Route element={<ContactForm />} path="/contact" />
       </Routes>
       {location.pathname === "/" && (
-        <ul
-          style={{
-            listStyle: "none",
-          }}
+        <div
+          style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}
         >
-          <li>
-            <Link to="/todo">To-do</Link>
-          </li>
-          <li>
-            <Link to="/counter">Counter</Link>
-          </li>
-        </ul>
+          <Link to="/todo">To-do</Link>
+          <Link to="/counter">Counter</Link>
+          <Link to="/contact">Contact form</Link>
+        </div>
       )}
     </>
   );
