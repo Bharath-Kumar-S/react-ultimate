@@ -27,7 +27,12 @@ const App = () => {
       </Routes>
       {location.pathname === "/" && (
         <div
-          style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "0.5rem",
+            textAlign: "left",
+          }}
         >
           <Link to="/todo">To-do</Link>
           <Link to="/counter">Counter</Link>
