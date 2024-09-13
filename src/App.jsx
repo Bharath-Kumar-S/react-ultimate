@@ -21,9 +21,9 @@ const App = () => {
     <>
       <Routes>
         <Route element={<Welcome />} path="/react-ultimate" />
-        <Route element={<Todo />} path="/todo" />
-        <Route element={<Counter />} path="/counter" />
-        <Route element={<ContactForm />} path="/contact" />
+        <Route element={<Todo />} path="/react-ultimate/todo" />
+        <Route element={<Counter />} path="/react-ultimate/counter" />
+        <Route element={<ContactForm />} path="/react-ultimate/contact" />
       </Routes>
       {location.pathname === "/react-ultimate/" && (
         <div
@@ -34,9 +34,9 @@ const App = () => {
             textAlign: "left",
           }}
         >
-          <Link to="/todo">To-do</Link>
-          <Link to="/counter">Counter</Link>
-          <Link to="/contact">Contact form</Link>
+          <Link to="/react-ultimate/todo">To-do</Link>
+          <Link to="/react-ultimate/counter">Counter</Link>
+          <Link to="/react-ultimate/contact">Contact form</Link>
         </div>
       )}
     </>
