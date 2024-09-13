@@ -25,18 +25,15 @@ export const Todo = () => {
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
         <label>Simple Todo</label>
-
         <input
           style={{ padding: "0.5rem" }}
           type="text"
           onChange={(e) => setInputValue(e.target.value)}
           value={inputValue}
         />
-
         <button onClick={handleAdd} disabled={inputValue === ""}>
           Add
         </button>
-
         <ul
           style={{
             display: "flex",
