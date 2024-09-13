@@ -20,12 +20,12 @@ const App = () => {
   return (
     <>
       <Routes>
-        <Route element={<Welcome />} path="/" />
+        <Route element={<Welcome />} path="/react-ultimate" />
         <Route element={<Todo />} path="/todo" />
         <Route element={<Counter />} path="/counter" />
         <Route element={<ContactForm />} path="/contact" />
       </Routes>
-      {location.pathname === "/" && (
+      {location.pathname === "/react-ultimate/" && (
         <div
           style={{
             display: "flex",
