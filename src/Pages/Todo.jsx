@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Back } from "../components/Back";
 
 export const Todo = () => {
   const [todos, setTodos] = useState([]);
@@ -20,9 +20,7 @@ export const Todo = () => {
 
   return (
     <>
-      <div style={{ position: "absolute", top: 50, left: 50 }}>
-        <Link to={"/"}> Back </Link>
-      </div>
+      <Back />
       <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
         <label>Simple Todo</label>
         <input

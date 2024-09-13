@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import "./App.css";
 import { Todo } from "./Pages/Todo";
+import { Counter } from "./Pages/Counter";
 
 const Welcome = () => {
   return <>Welcome to react Ultimate!!!</>;
@@ -20,6 +21,7 @@ const App = () => {
       <Routes>
         <Route element={<Welcome />} path="/" />
         <Route element={<Todo />} path="/todo" />
+        <Route element={<Counter />} path="/counter" />
       </Routes>
       {location.pathname === "/" && (
         <ul
@@ -29,6 +31,9 @@ const App = () => {
         >
           <li>
             <Link to="/todo">To-do</Link>
+          </li>
+          <li>
+            <Link to="/counter">Counter</Link>
           </li>
         </ul>
       )}
