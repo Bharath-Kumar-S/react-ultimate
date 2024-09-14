@@ -29,10 +29,12 @@ export const Todo = () => {
       >
         <h3 style={{ textAlign: "left" }}>Simple Todo</h3>
         <input
+          className="input"
           style={{ padding: "0.5rem" }}
           type="text"
           onChange={(e) => setInputValue(e.target.value)}
           value={inputValue}
+          maxLength={56}
         />
         <button onClick={handleAdd} disabled={inputValue === ""}>
           Add
@@ -51,22 +53,18 @@ export const Todo = () => {
             <div
               key={index}
               style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                flexDirection: "column",
+                gap: "1rem",
                 width: "90%",
-                border: "1px solid white",
+                border: "1px solid grey",
                 borderRadius: "0.5rem",
                 padding: "1rem",
               }}
             >
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  gap: "1rem",
-                }}
-              >
-                {todo}
-              </div>
+              <div>{todo}</div>
 
               <button onClick={() => handleDelete(index)}>Delete</button>
             </div>

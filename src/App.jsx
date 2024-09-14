@@ -5,6 +5,8 @@ import {
   Link,
   useLocation,
 } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { FaSun, FaMoon } from "react-icons/fa";
 import "./App.css";
 import { Todo } from "./Pages/Todo";
 import { Counter } from "./Pages/Counter";
@@ -13,6 +15,15 @@ import { Layout } from "./components/Layout";
 
 const App = () => {
   const location = useLocation();
+  const [darkMode, setDarkMode] = useState(true);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+  // Use useEffect to add/remove class to the body element
+  useEffect(() => {
+    document.body.className = darkMode ? "dark" : "light";
+  }, [darkMode]); // Update whenever darkMode changes
 
   return (
     <>
@@ -57,6 +68,14 @@ const App = () => {
           <Link to="/react-ultimate/contact">Contact form</Link>
         </div>
       )}
+      <button
+        onClick={toggleDarkMode}
+        className={
+          darkMode ? "toggle-button light-button" : "toggle-button dark-button"
+        }
+      >
+        {darkMode ? <FaSun /> : <FaMoon />} {/* Change icon based on theme */}
+      </button>
     </>
   );
 };

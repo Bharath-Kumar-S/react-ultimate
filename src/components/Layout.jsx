@@ -3,7 +3,9 @@ import { Back } from "./Back";
 export const Header = () => {
   return (
     <>
-      <Back />
+      <div style={{ display: "flex" }}>
+        <Back />
+      </div>
       <div
         style={{
           display: "flex",
@@ -21,7 +23,9 @@ export const Layout = ({ children }) => {
   return (
     <>
       <Header />
-      {children}
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        {children}
+      </div>
     </>
   );
 };
