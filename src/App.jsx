@@ -9,10 +9,7 @@ import "./App.css";
 import { Todo } from "./Pages/Todo";
 import { Counter } from "./Pages/Counter";
 import { ContactForm } from "./Pages/ContactForm";
-
-const Welcome = () => {
-  return <h1>Welcome to react Ultimate!!!</h1>;
-};
+import { Layout } from "./components/Layout";
 
 const App = () => {
   const location = useLocation();
@@ -20,10 +17,31 @@ const App = () => {
   return (
     <>
       <Routes>
-        <Route element={<Welcome />} path="/react-ultimate" />
-        <Route element={<Todo />} path="/react-ultimate/todo" />
-        <Route element={<Counter />} path="/react-ultimate/counter" />
-        <Route element={<ContactForm />} path="/react-ultimate/contact" />
+        <Route element={<Layout></Layout>} path="/react-ultimate" />
+        <Route
+          element={
+            <Layout>
+              <Todo />
+            </Layout>
+          }
+          path="/react-ultimate/todo"
+        />
+        <Route
+          element={
+            <Layout>
+              <Counter />
+            </Layout>
+          }
+          path="/react-ultimate/counter"
+        />
+        <Route
+          element={
+            <Layout>
+              <ContactForm />
+            </Layout>
+          }
+          path="/react-ultimate/contact"
+        />
       </Routes>
       {location.pathname === "/react-ultimate/" && (
         <div

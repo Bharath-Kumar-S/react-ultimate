@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Back } from "../components/Back";
 
 export const ContactForm = () => {
   const [values, setValues] = useState({
@@ -34,7 +33,6 @@ export const ContactForm = () => {
 
   return (
     <>
-      <Back />
       <div
         style={{
           display: "flex",

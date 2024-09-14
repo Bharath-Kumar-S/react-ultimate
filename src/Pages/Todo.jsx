@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Back } from "../components/Back";
 
 export const Todo = () => {
   const [todos, setTodos] = useState([]);
@@ -20,7 +19,6 @@ export const Todo = () => {
 
   return (
     <>
-      <Back />
       <div
         style={{
           display: "flex",
