@@ -21,8 +21,15 @@ export const Todo = () => {
   return (
     <>
       <Back />
-      <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-        <label>Simple Todo</label>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "1rem",
+          width: "30rem",
+        }}
+      >
+        <h3 style={{ textAlign: "left" }}>Simple Todo</h3>
         <input
           style={{ padding: "0.5rem" }}
           type="text"
@@ -32,7 +39,7 @@ export const Todo = () => {
         <button onClick={handleAdd} disabled={inputValue === ""}>
           Add
         </button>
-        <ul
+        <div
           style={{
             display: "flex",
             alignItems: "center",
@@ -43,20 +50,30 @@ export const Todo = () => {
           }}
         >
           {todos.map((todo, index) => (
-            <li
+            <div
               key={index}
               style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: "1rem",
+                width: "90%",
+                border: "1px solid white",
+                borderRadius: "0.5rem",
+                padding: "1rem",
               }}
             >
-              {todo}
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: "1rem",
+                }}
+              >
+                {todo}
+              </div>
+
               <button onClick={() => handleDelete(index)}>Delete</button>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     </>
   );
