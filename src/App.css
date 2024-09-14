@@ -75,3 +75,17 @@
 .read-the-docs {
   color: #888;
 }
+
+label + input {
+  margin-left: 8px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table td {
+  border: 1px solid #000;
+  padding: 8px;
+  text-align: center;
+}

@@ -13,6 +13,7 @@ import { Counter } from "./Pages/Counter";
 import { ContactForm } from "./Pages/ContactForm";
 import { Layout } from "./components/Layout";
 import { FlightBooker } from "./Pages/FlightBooker";
+import { GenerateTable } from "./Pages/GenerateTable";
 
 const App = () => {
   const location = useLocation();
@@ -62,6 +63,14 @@ const App = () => {
           }
           path="/react-ultimate/flight-booker"
         />
+        <Route
+          element={
+            <Layout>
+              <GenerateTable />
+            </Layout>
+          }
+          path="/react-ultimate/generate-table"
+        />
       </Routes>
       {location.pathname === "/react-ultimate/" && (
         <div
@@ -76,6 +85,7 @@ const App = () => {
           <Link to="/react-ultimate/counter">Counter</Link>
           <Link to="/react-ultimate/contact">Contact form</Link>
           <Link to="/react-ultimate/flight-booker">Flight Booker</Link>
+          <Link to="/react-ultimate/generate-table">Generate Table</Link>
         </div>
       )}
       <button
