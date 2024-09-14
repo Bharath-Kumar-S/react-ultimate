@@ -50,6 +50,7 @@ export const ContactForm = () => {
         >
           <label>Name</label>
           <input
+            className="input"
             type="text"
             value={values.name}
             onChange={(e) =>
@@ -71,6 +72,7 @@ export const ContactForm = () => {
         >
           <label>Email</label>
           <input
+            className="input"
             type="email"
             value={values.email}
             onChange={(e) =>
@@ -86,6 +88,7 @@ export const ContactForm = () => {
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           <label>Message</label>
           <input
+            className="input"
             type="text"
             value={values.message}
             onChange={(e) =>
