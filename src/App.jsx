@@ -20,10 +20,10 @@ const App = () => {
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
-  // Use useEffect to add/remove class to the body element
+
   useEffect(() => {
     document.body.className = darkMode ? "dark" : "light";
-  }, [darkMode]); // Update whenever darkMode changes
+  }, [darkMode]);
 
   return (
     <>
