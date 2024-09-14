@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FaPlaneArrival, FaPlaneDeparture } from "react-icons/fa";
 
 export const FlightBooker = () => {
   const [type, setType] = useState("one-way");
@@ -41,6 +42,7 @@ export const FlightBooker = () => {
         <option value="one-way">One Way</option>
         <option value="return">Return</option>
       </select>
+      <FaPlaneDeparture />
       <input
         required
         className="input"
@@ -48,6 +50,7 @@ export const FlightBooker = () => {
         value={to}
         onChange={(e) => setTo(e.target.value)}
       />
+      {type === "return" && <FaPlaneArrival />}
       <input
         required={type === "return"}
         className="input"
