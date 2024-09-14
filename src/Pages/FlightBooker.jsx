@@ -42,12 +42,14 @@ export const FlightBooker = () => {
         <option value="return">Return</option>
       </select>
       <input
+        required
         className="input"
         type="date"
         value={to}
         onChange={(e) => setTo(e.target.value)}
       />
       <input
+        required={type === "return"}
         className="input"
         hidden={type === "one-way"}
         type="date"
