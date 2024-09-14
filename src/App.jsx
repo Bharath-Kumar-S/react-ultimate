@@ -12,6 +12,7 @@ import { Todo } from "./Pages/Todo";
 import { Counter } from "./Pages/Counter";
 import { ContactForm } from "./Pages/ContactForm";
 import { Layout } from "./components/Layout";
+import { FlightBooker } from "./Pages/FlightBooker";
 
 const App = () => {
   const location = useLocation();
@@ -53,6 +54,14 @@ const App = () => {
           }
           path="/react-ultimate/contact"
         />
+        <Route
+          element={
+            <Layout>
+              <FlightBooker />
+            </Layout>
+          }
+          path="/react-ultimate/flight-booker"
+        />
       </Routes>
       {location.pathname === "/react-ultimate/" && (
         <div
@@ -66,6 +75,7 @@ const App = () => {
           <Link to="/react-ultimate/todo">To-do</Link>
           <Link to="/react-ultimate/counter">Counter</Link>
           <Link to="/react-ultimate/contact">Contact form</Link>
+          <Link to="/react-ultimate/flight-booker">Flight Booker</Link>
         </div>
       )}
       <button
