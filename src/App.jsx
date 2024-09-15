@@ -17,6 +17,7 @@ import { GenerateTable } from "./Pages/GenerateTable";
 import { UnControlledForm } from "./Pages/UnControlledForm";
 import { ControlledForm } from "./Pages/ControlledForm";
 import { UsePathParams } from "./Pages/useParams";
+import { UseSearchParams } from "./Pages/UseSearchParams";
 
 const App = () => {
   const location = useLocation();
@@ -98,6 +99,14 @@ const App = () => {
           }
           path="/react-ultimate/path-params/:id"
         />
+        <Route
+          element={
+            <Layout>
+              <UseSearchParams />
+            </Layout>
+          }
+          path="/react-ultimate/search-params"
+        />
       </Routes>
       {location.pathname === "/react-ultimate/" && (
         <div
@@ -116,6 +125,9 @@ const App = () => {
           <Link to="/react-ultimate/uncontrolled-form">Uncontrolled Form</Link>
           <Link to="/react-ultimate/controlled-form">Controlled Form</Link>
           <Link to="/react-ultimate/path-params/ssid_1234">Path Params</Link>
+          <Link to="/react-ultimate/search-params?age=30&name=bharath">
+            Search Params
+          </Link>
         </div>
       )}
       <button
