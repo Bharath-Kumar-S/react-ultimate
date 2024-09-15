@@ -9,3 +9,4 @@
 7. [Controlled Form](src/Pages/ControlledForm.jsx)
 8. [Use Params](src/Pages/useParams.jsx)
 9. [Use Search Params](src/Pages/UseSearchParams.jsx)
+10. [Use Location](src/Pages/UseLocation.jsx)

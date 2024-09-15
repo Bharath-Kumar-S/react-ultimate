@@ -18,6 +18,7 @@ import { UnControlledForm } from "./Pages/UnControlledForm";
 import { ControlledForm } from "./Pages/ControlledForm";
 import { UsePathParams } from "./Pages/useParams";
 import { UseSearchParams } from "./Pages/UseSearchParams";
+import { UseLocation } from "./Pages/UseLocation";
 
 const App = () => {
   const location = useLocation();
@@ -107,6 +108,14 @@ const App = () => {
           }
           path="/react-ultimate/search-params"
         />
+        <Route
+          element={
+            <Layout>
+              <UseLocation />
+            </Layout>
+          }
+          path="/react-ultimate/use-location"
+        />
       </Routes>
       {location.pathname === "/react-ultimate/" && (
         <div
@@ -128,6 +137,7 @@ const App = () => {
           <Link to="/react-ultimate/search-params?age=30&name=bharath">
             Search Params
           </Link>
+          <Link to="/react-ultimate/use-location">Use Location</Link>
         </div>
       )}
       <button
