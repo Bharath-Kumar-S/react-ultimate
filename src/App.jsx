@@ -14,7 +14,7 @@ import { ContactForm } from "./Pages/ContactForm";
 import { Layout } from "./components/Layout";
 import { FlightBooker } from "./Pages/FlightBooker";
 import { GenerateTable } from "./Pages/GenerateTable";
-import { UnControlledForm } from "./Pages/unControlledForm";
+import { UnControlledForm } from "./Pages/UnControlledForm";
 import { ControlledForm } from "./Pages/ControlledForm";
 
 const App = () => {
