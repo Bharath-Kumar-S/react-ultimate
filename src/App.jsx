@@ -6,7 +6,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { FaSun, FaMoon } from "react-icons/fa";
+import { FaSun, FaMoon, FaGit } from "react-icons/fa";
 import "./App.css";
 import { Todo } from "./Pages/Todo";
 import { Counter } from "./Pages/Counter";

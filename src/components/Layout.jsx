@@ -1,12 +1,18 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { Back } from "./Back";
+import { FaGit } from "react-icons/fa";
 
 export const Header = () => {
   const location = useLocation();
   return (
     <>
       <div style={{ display: "flex", gap: "3rem" }}>
-        <p style={{ fontWeight: "bolder" }}>React ultimate</p>
+        <p style={{ fontWeight: "bolder", marginRight: "1rem" }}>
+          React ultimate{"  "}
+          <Link to="https://github.com/Bharath-Kumar-S/react-ultimate">
+            Source code <FaGit />
+          </Link>
+        </p>
         <p>{location.pathname !== "/react-ultimate/" && <Back />}</p>
       </div>
     </>
