@@ -7,3 +7,4 @@
 5. [Generate Table](src/Pages/GenerateTable.jsx)
 6. [UnControlled Form](src/Pages/UnControlledForm.jsx)
 7. [Controlled Form](src/Pages/ControlledForm.jsx)
+8. [Use Params](src/Pages/useParams.jsx)
