@@ -14,6 +14,8 @@ import { ContactForm } from "./Pages/ContactForm";
 import { Layout } from "./components/Layout";
 import { FlightBooker } from "./Pages/FlightBooker";
 import { GenerateTable } from "./Pages/GenerateTable";
+import { UnControlledForm } from "./Pages/unControlledForm";
+import { ControlledForm } from "./Pages/ControlledForm";
 
 const App = () => {
   const location = useLocation();
@@ -71,6 +73,22 @@ const App = () => {
           }
           path="/react-ultimate/generate-table"
         />
+        <Route
+          element={
+            <Layout>
+              <UnControlledForm />
+            </Layout>
+          }
+          path="/react-ultimate/uncontrolled-form"
+        />
+        <Route
+          element={
+            <Layout>
+              <ControlledForm />
+            </Layout>
+          }
+          path="/react-ultimate/controlled-form"
+        />
       </Routes>
       {location.pathname === "/react-ultimate/" && (
         <div
@@ -86,6 +104,8 @@ const App = () => {
           <Link to="/react-ultimate/contact">Contact form</Link>
           <Link to="/react-ultimate/flight-booker">Flight Booker</Link>
           <Link to="/react-ultimate/generate-table">Generate Table</Link>
+          <Link to="/react-ultimate/uncontrolled-form">Uncontrolled Form</Link>
+          <Link to="/react-ultimate/controlled-form">Controlled Form</Link>
         </div>
       )}
       <button
