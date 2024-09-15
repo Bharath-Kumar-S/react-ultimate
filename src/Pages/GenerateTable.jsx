@@ -52,6 +52,7 @@ export const GenerateTable = () => {
           min={1}
           defaultValue={1}
           max={10}
+          required
         />
         <input
           id="columns"
@@ -60,6 +61,7 @@ export const GenerateTable = () => {
           min={1}
           max={10}
           defaultValue={1}
+          required
         />
         <button type="submit">Generate</button>
       </form>
