@@ -6,7 +6,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { FaSun, FaMoon, FaGit } from "react-icons/fa";
+import { FaSun, FaMoon } from "react-icons/fa";
 import "./App.css";
 import { Todo } from "./Pages/Todo";
 import { Counter } from "./Pages/Counter";
@@ -14,11 +14,14 @@ import { ContactForm } from "./Pages/ContactForm";
 import { Layout } from "./components/Layout";
 import { FlightBooker } from "./Pages/FlightBooker";
 import { GenerateTable } from "./Pages/GenerateTable";
-import { UnControlledForm } from "./Pages/UnControlledForm";
 import { ControlledForm } from "./Pages/ControlledForm";
 import { UsePathParams } from "./Pages/useParams";
 import { UseSearchParams } from "./Pages/UseSearchParams";
 import { UseLocation } from "./Pages/UseLocation";
+import { ComponentDidUpdate } from "./Pages/ComponentDidUpdate";
+import { UseComponentDidMount } from "./Pages/ComponentDidMount";
+import { ComponentDidUnMount } from "./Pages/ComponentDidUnMount";
+import { UnControlledForm } from "./Pages/UnControlledForms";
 
 const App = () => {
   const location = useLocation();
@@ -116,6 +119,30 @@ const App = () => {
           }
           path="/react-ultimate/use-location"
         />
+        <Route
+          element={
+            <Layout>
+              <UseComponentDidMount />
+            </Layout>
+          }
+          path="/react-ultimate/component-did-mount"
+        />
+        <Route
+          element={
+            <Layout>
+              <ComponentDidUpdate />
+            </Layout>
+          }
+          path="/react-ultimate/component-did-update"
+        />
+        <Route
+          element={
+            <Layout>
+              <ComponentDidUnMount />
+            </Layout>
+          }
+          path="/react-ultimate/component-will-unmount"
+        />
       </Routes>
       {location.pathname === "/react-ultimate/" && (
         <div
@@ -138,6 +165,15 @@ const App = () => {
             Search Params
           </Link>
           <Link to="/react-ultimate/use-location">Use Location</Link>
+          <Link to="/react-ultimate/component-did-mount">
+            Component did Mount
+          </Link>
+          <Link to="/react-ultimate/component-did-update">
+            Component did Update
+          </Link>
+          <Link to="/react-ultimate/component-will-unmount">
+            Component will Unmount
+          </Link>
         </div>
       )}
       <button

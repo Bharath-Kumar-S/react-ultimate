@@ -10,3 +10,6 @@
 8. [Use Params](src/Pages/useParams.jsx)
 9. [Use Search Params](src/Pages/UseSearchParams.jsx)
 10. [Use Location](src/Pages/UseLocation.jsx)
+11. [Component did Mount](src/Pages/ComponentDidMount.jsx)
+12. [Component did Unmount](src/Pages/ComponentDidUnMount.jsx)
+13. [Component did Update](src/Pages/ComponentDidUpdate.jsx)

@@ -10,7 +10,7 @@ export const Header = () => {
         <p style={{ fontWeight: "bolder", marginRight: "1rem" }}>
           React ultimate{"  "}
           <Link to="https://github.com/Bharath-Kumar-S/react-ultimate">
-            Source code <FaGit />
+            <FaGit />
           </Link>
         </p>
         <p>{location.pathname !== "/react-ultimate/" && <Back />}</p>
