@@ -86,6 +86,7 @@ const App = () => {
             flexDirection: "column",
             gap: "0.5rem",
             textAlign: "left",
+            width: "fit-content",
           }}
         >
           <Link to="/react-ultimate/todo">To-do</Link>
