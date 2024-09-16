@@ -23,6 +23,34 @@ import { UseComponentDidMount } from "./Pages/ComponentDidMount";
 import { ComponentDidUnMount } from "./Pages/ComponentDidUnMount";
 import { UnControlledForm } from "./Pages/UnControlledForms";
 
+const routeConfig = [
+  { path: "/react-ultimate/todo", component: <Todo /> },
+  { path: "/react-ultimate/counter", component: <Counter /> },
+  { path: "/react-ultimate/contact", component: <ContactForm /> },
+  { path: "/react-ultimate/flight-booker", component: <FlightBooker /> },
+  { path: "/react-ultimate/generate-table", component: <GenerateTable /> },
+  {
+    path: "/react-ultimate/uncontrolled-form",
+    component: <UnControlledForm />,
+  },
+  { path: "/react-ultimate/controlled-form", component: <ControlledForm /> },
+  { path: "/react-ultimate/path-params/:id", component: <UsePathParams /> },
+  { path: "/react-ultimate/search-params", component: <UseSearchParams /> },
+  { path: "/react-ultimate/use-location", component: <UseLocation /> },
+  {
+    path: "/react-ultimate/component-did-mount",
+    component: <UseComponentDidMount />,
+  },
+  {
+    path: "/react-ultimate/component-did-update",
+    component: <ComponentDidUpdate />,
+  },
+  {
+    path: "/react-ultimate/component-will-unmount",
+    component: <ComponentDidUnMount />,
+  },
+];
+
 const App = () => {
   const location = useLocation();
   const [darkMode, setDarkMode] = useState(true);
@@ -38,112 +66,19 @@ const App = () => {
   return (
     <>
       <Routes>
-        <Route element={<Layout></Layout>} path="/react-ultimate" />
-        <Route
-          element={
-            <Layout>
-              <Todo />
-            </Layout>
-          }
-          path="/react-ultimate/todo"
-        />
-        <Route
-          element={
-            <Layout>
-              <Counter />
-            </Layout>
-          }
-          path="/react-ultimate/counter"
-        />
-        <Route
-          element={
-            <Layout>
-              <ContactForm />
-            </Layout>
-          }
-          path="/react-ultimate/contact"
-        />
-        <Route
-          element={
-            <Layout>
-              <FlightBooker />
-            </Layout>
-          }
-          path="/react-ultimate/flight-booker"
-        />
-        <Route
-          element={
-            <Layout>
-              <GenerateTable />
-            </Layout>
-          }
-          path="/react-ultimate/generate-table"
-        />
-        <Route
-          element={
-            <Layout>
-              <UnControlledForm />
-            </Layout>
-          }
-          path="/react-ultimate/uncontrolled-form"
-        />
-        <Route
-          element={
-            <Layout>
-              <ControlledForm />
-            </Layout>
-          }
-          path="/react-ultimate/controlled-form"
-        />
-        <Route
-          element={
-            <Layout>
-              <UsePathParams />
-            </Layout>
-          }
-          path="/react-ultimate/path-params/:id"
-        />
-        <Route
-          element={
-            <Layout>
-              <UseSearchParams />
-            </Layout>
-          }
-          path="/react-ultimate/search-params"
-        />
-        <Route
-          element={
-            <Layout>
-              <UseLocation />
-            </Layout>
-          }
-          path="/react-ultimate/use-location"
-        />
-        <Route
-          element={
-            <Layout>
-              <UseComponentDidMount />
-            </Layout>
-          }
-          path="/react-ultimate/component-did-mount"
-        />
-        <Route
-          element={
-            <Layout>
-              <ComponentDidUpdate />
-            </Layout>
-          }
-          path="/react-ultimate/component-did-update"
-        />
-        <Route
-          element={
-            <Layout>
-              <ComponentDidUnMount />
-            </Layout>
-          }
-          path="/react-ultimate/component-will-unmount"
-        />
+        {/* Home route */}
+        <Route element={<Layout />} path="/react-ultimate" />
+        {/* Dynamic routes from config */}
+        {routeConfig.map(({ path, component }, index) => (
+          <Route
+            key={index}
+            path={path}
+            element={<Layout>{component}</Layout>}
+          />
+        ))}
       </Routes>
+
+      {/* Links for navigation */}
       {location.pathname === "/react-ultimate/" && (
         <div
           style={{
@@ -176,6 +111,8 @@ const App = () => {
           </Link>
         </div>
       )}
+
+      {/* Dark mode toggle button */}
       <button
         onClick={toggleDarkMode}
         className={

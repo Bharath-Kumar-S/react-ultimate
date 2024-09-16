@@ -6,7 +6,7 @@ export const Header = () => {
   const location = useLocation();
   return (
     <>
-      <div style={{ display: "flex", gap: "3rem" }}>
+      <div style={{ display: "flex", gap: "1rem", flexDirection: "column" }}>
         <p style={{ fontWeight: "bolder", marginRight: "1rem" }}>
           React ultimate{"  "}
           <Link to="https://github.com/Bharath-Kumar-S/react-ultimate">
