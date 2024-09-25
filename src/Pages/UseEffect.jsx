@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+
 export const UseEffect = () => {
   const [count, setCount] = useState(0);
   const [sync, setSync] = useState();

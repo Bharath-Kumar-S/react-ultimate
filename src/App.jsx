@@ -25,7 +25,7 @@ import { UnControlledForm } from "./Pages/UnControlledForms";
 import { Debounce } from "./Pages/Debounce";
 import { Throttle } from "./Pages/Throttle";
 import { UseCallBack } from "./Pages/UseCallBack";
-import { UseEffect } from "./Pages/useEffect";
+import { UseEffect } from "./Pages/UseEffect";
 import { UseMemo } from "./Pages/UseMemo";
 
 const routeConfig = [
