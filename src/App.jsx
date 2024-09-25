@@ -22,6 +22,11 @@ import { ComponentDidUpdate } from "./Pages/ComponentDidUpdate";
 import { UseComponentDidMount } from "./Pages/ComponentDidMount";
 import { ComponentDidUnMount } from "./Pages/ComponentDidUnMount";
 import { UnControlledForm } from "./Pages/UnControlledForms";
+import { Debounce } from "./Pages/Debounce";
+import { Throttle } from "./Pages/Throttle";
+import { UseCallBack } from "./Pages/UseCallBack";
+import { UseEffect } from "./Pages/useEffect";
+import { UseMemo } from "./Pages/UseMemo";
 
 const routeConfig = [
   { path: "/react-ultimate/todo", component: <Todo /> },
@@ -49,6 +54,11 @@ const routeConfig = [
     path: "/react-ultimate/component-will-unmount",
     component: <ComponentDidUnMount />,
   },
+  { path: "/react-ultimate/debounce", component: <Debounce /> },
+  { path: "/react-ultimate/throttle", component: <Throttle /> },
+  { path: "/react-ultimate/usecallback", component: <UseCallBack /> },
+  { path: "/react-ultimate/useeffect", component: <UseEffect /> },
+  { path: "/react-ultimate/usememo", component: <UseMemo /> },
 ];
 
 const App = () => {
@@ -110,6 +120,11 @@ const App = () => {
           <Link to="/react-ultimate/component-will-unmount">
             Component will Unmount
           </Link>
+          <Link to="/react-ultimate/debounce">Debounce</Link>
+          <Link to="/react-ultimate/throttle">Throttle</Link>
+          <Link to="/react-ultimate/usecallback">useCallback</Link>
+          <Link to="/react-ultimate/useeffect">useEffect</Link>
+          <Link to="/react-ultimate/usememo">useMemo</Link>
         </div>
       )}
 
