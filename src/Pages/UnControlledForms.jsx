@@ -1,9 +1,13 @@
+import { useRef } from "react";
 export const UnControlledForm = () => {
+  const username = useRef();
+  const password = useRef();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = {
-      username: e.target.username.value,
-      password: e.target.password.value,
+      username: username.current.value,
+      password: password.current.value,
     };
     alert(formData.password, formData.username);
   };
@@ -12,31 +16,34 @@ export const UnControlledForm = () => {
     <div>
       <div>unControlledForm</div>
       <form onSubmit={handleSubmit}>
-        <input type="text" name="username" />
-        <input type="text" name="password" />
+        <input type="text" ref={username} name="username" />
+        <input type="text" ref={password} name="password" />
         <button>Submit</button>
       </form>
       <pre>
         <code>
           {`
+import { useRef } from "react";
 export const UnControlledForm = () => {
-const handleSubmit = (e) => { 
+  const username = useRef();
+  const password = useRef();
+
+  const handleSubmit = (e) => {
     e.preventDefault();
     const formData = {
-        username: e.target.username.value,
-        password: e.target.password.value,
+      username: username.current.value,
+      password: password.current.value,
     };
-    console.log(formData);
-};
+    alert(formData.password, formData.username);
+  };
 
-return (
+  return (
     <div>
-        <div>unControlledForm</div>
-            <form onSubmit={handleSubmit}>
-                <input type="text" name="username" />
-                <input type="text" name="password" />
-                <button>Submit</button>
-            </form>
+      <div>unControlledForm</div>
+      <form onSubmit={handleSubmit}>
+        <input type="text" ref={username} name="username" />
+        <input type="text" ref={password} name="password" />
+        <button>Submit</button>
         </div>
     </div>
 );

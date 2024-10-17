@@ -1,35 +1,34 @@
-import { useCallback, useState } from "react";
+import { useState, useCallback } from "react";
 
 export const Debounce = () => {
   const [text, setText] = useState("");
-  const [debouncedtext, setDebouncedtext] = useState("");
+  const [debouncedText, setDebouncedText] = useState("");
 
-  const debounce = (func, delay) => {
-    let timeoutId;
+  const debounce = (func, wait = 500) => {
+    let timeout;
     return function (...args) {
-      if (timeoutId) clearTimeout(timeoutId);
-      timeoutId = setTimeout(() => {
-        func(...args);
-      }, delay);
+      if (timeout) clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        return func(...args);
+      }, wait);
     };
   };
 
-  const debounceHandle = useCallback(
-    debounce((value) => {
-      setDebouncedtext(value);
-    }, 1000),
+  const handleDebounce = useCallback(
+    debounce((value) => setDebouncedText(value), 600),
     []
   );
 
-  const handleChange = (e) => {
+  const handleInputChange = (e) => {
     setText(e.target.value);
-    debounceHandle(e.target.value);
+    handleDebounce(e.target.value);
   };
 
   return (
     <>
-      <input type="text" onChange={handleChange} value={text} />
-      <p>Debounced Value : {debouncedtext}</p>
+      <div>Debounce</div>
+      <input value={text} onChange={handleInputChange} />
+      <p>Debounced Text: {debouncedText}</p>
     </>
   );
 };
